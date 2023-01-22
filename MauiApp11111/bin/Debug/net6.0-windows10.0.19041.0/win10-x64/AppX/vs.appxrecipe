@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Mark-PC\source\repos\MauiApp11111\MauiApp11111\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-01-22T21:27:46.250</Modified>
+      <Modified>2023-01-22T21:31:07.494</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Mark-PC\source\repos\MauiApp11111\MauiApp11111\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-01-22T21:27:45.404</Modified>
+      <Modified>2023-01-22T21:31:06.678</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark-PC\source\repos\MauiApp11111\MauiApp11111\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiApp11111.runtimeconfig.json">
       <PackagePath>MauiApp11111.runtimeconfig.json</PackagePath>
@@ -1136,7 +1136,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark-PC\source\repos\MauiApp11111\MauiApp11111\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MauiApp11111.deps.json">
       <PackagePath>MauiApp11111.deps.json</PackagePath>
-      <Modified>2023-01-22T21:27:45.988</Modified>
+      <Modified>2023-01-22T21:31:07.273</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mark-PC\source\repos\MauiApp11111\RazorClassLibrary\obj\Debug\net6.0\staticwebassets.development.json">
       <PackagePath>RazorClassLibrary.staticwebassets.runtime.json</PackagePath>
