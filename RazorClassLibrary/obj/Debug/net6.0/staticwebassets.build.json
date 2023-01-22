@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "LOA9opdKYcw2+bWNh1Lc4rxGMLpPhgxrRIn5ZjFwU4w=",
+  "Source": "RazorClassLibrary",
+  "BasePath": "_content/RazorClassLibrary",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "RazorClassLibrary\\wwwroot",
+      "Source": "RazorClassLibrary",
+      "ContentRoot": "C:\\Users\\Mark-PC\\source\\repos\\MauiApp11111\\RazorClassLibrary\\wwwroot\\",
+      "BasePath": "_content/RazorClassLibrary",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Mark-PC\\source\\repos\\MauiApp11111\\RazorClassLibrary\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RazorClassLibrary.styles.css",
+      "SourceId": "RazorClassLibrary",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Mark-PC\\source\\repos\\MauiApp11111\\RazorClassLibrary\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/RazorClassLibrary",
+      "RelativePath": "RazorClassLibrary.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Mark-PC\\source\\repos\\MauiApp11111\\RazorClassLibrary\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RazorClassLibrary.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\Mark-PC\\source\\repos\\MauiApp11111\\RazorClassLibrary\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RazorClassLibrary.bundle.scp.css",
+      "SourceId": "RazorClassLibrary",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Mark-PC\\source\\repos\\MauiApp11111\\RazorClassLibrary\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/RazorClassLibrary",
+      "RelativePath": "RazorClassLibrary.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Mark-PC\\source\\repos\\MauiApp11111\\RazorClassLibrary\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RazorClassLibrary.bundle.scp.css"
+    }
+  ]
+}

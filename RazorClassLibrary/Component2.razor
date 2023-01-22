@@ -1,0 +1,202 @@
+﻿@using RazorClassLibrary.Models
+
+<EditForm Model="@collection">
+    <div class="mb-3">
+        <label for="collectionItem" class="form-lael"> Collection Name:</label>
+        <InputText @bind-Value="collection.collectionItem" class="form-control"
+                   id="collectionItem"></InputText>
+        <button class="btn btn-primary" @onclick="AddCollection">Add</button>
+    </div>
+
+</EditForm>
+
+<div>
+    <label for="newItem">Add Item:</label>
+    <input type="text" id="newItem" @bind="NewItem" />
+    <button class="btn btn-primary" @onclick="AddItem">Add Item</button>
+</div>
+
+<div>
+    <label for="listSelect">Select Collection:</label>
+    <select id="listSelect" @bind="SelectedCollectionName">
+        <option value="">Select a collection</option>
+        @foreach (var collection in collections)
+        {
+            <option value="@collection.collectionItem">@collection.collectionItem</option>
+        }
+    </select>
+</div>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in CurrentListItems)
+            {
+                <li>
+                    <p>@item.ItemName</p>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => DeleteItem(item)">Delete</button>
+                    </td>
+                </li>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    private string NewItem { get; set; }
+    private string SelectedCollectionName { get; set; }
+    private List<CollectionModel> List { get; set; } = new List<CollectionModel>();
+    private List<CollectionModel> CurrentListItems { get; set; } = new List<CollectionModel>();    
+    private List<CollectionModel> collections = new();
+    private CollectionModel collection = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Load any previously saved lists
+    }
+
+    private void AddItem()
+    {
+        if (string.IsNullOrEmpty(SelectedCollectionName))
+        {
+            Console.WriteLine("Please select a collection to add the item to.");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(NewItem))
+        {
+            Console.WriteLine("Please enter an item to add.");
+            return;
+        }
+
+        var selectedCollection = collections.FirstOrDefault(c => c.collectionItem == SelectedCollectionName);
+        if (selectedCollection == null)
+        {
+            Console.WriteLine("Selected collection not found.");
+            return;
+        }
+
+        var newItem = new CollectionModel() { collectionItem = NewItem };
+        selectedCollection.Items.Add(newItem);
+        LoadList();
+        Console.WriteLine($"Item {newItem.ItemName} added to collection {selectedCollection.collectionItem}.");
+    }
+    private void LoadList()
+    {
+        if (string.IsNullOrEmpty(SelectedCollectionName))
+        {
+            Console.WriteLine("Please select a list to view.");
+            return;
+        }
+
+        var selectedList = collections.FirstOrDefault(c => c.collectionItem == SelectedCollectionName);
+        if (selectedList == null)
+        {
+            Console.WriteLine("Selected collection not found.");
+            return;
+        }
+
+        CurrentListItems = selectedList.Items;
+    }
+
+    private void DeleteItem(CollectionModel item)
+    {
+        if (item == null)
+        {
+            Console.WriteLine("Please select an item to delete.");
+            return;
+        }
+
+        var selectedList = List.FirstOrDefault(l => l.collectionItem == SelectedCollectionName);
+        if (selectedList == null)
+        {
+            Console.WriteLine("Selected list not found.");
+            return;
+        }
+
+        selectedList.Items.Remove(item);
+        LoadList();
+        Console.WriteLine($"Item {item.ItemName} deleted from list {selectedList.collectionItem}.");
+    }
+
+    private class ListModel
+    {
+        public string ListName { get; set; }
+        public List<CollectionModel> Items { get; set; } = new List<CollectionModel>();
+    }
+
+
+    private void AddCollection()
+    {
+        // Create a new collection instance
+        var newCollection = new CollectionModel() { collectionItem = collection.collectionItem, Items = new List<CollectionModel>() };
+
+        // add it to the collections list
+        collections.Add(newCollection);
+
+        // update the List property to include the new collection
+        List.Add(newCollection);
+
+        // Clear the form fields
+        collection.collectionItem = "";
+
+        // Notify the component to re-render
+        StateHasChanged();
+    }
+
+}
+
+
+@*@using RazorClassLibrary.Models
+
+<EditForm Model = "@collection">
+    <div class="mb-3">
+        <label for="collectionItem" class="form-label"> Collection Name:</label>
+           <InputText @bind-Value="collection.collectionItem" class="form-control"
+           id="collectionItem"></InputText>
+           <button class="btn btn-primary" @onclick="AddCollection">Add</button>
+    </div>
+
+</EditForm>
+<EditForm Model="@AddToCollection">
+    <div class="mb-3">
+        <label for="collectionItem" class="form-lael"> Collection Name:</label>
+        <InputText @bind-Value="collection.collectionItem" class="form-control"
+                   id="collectionItem"></InputText>
+        <button class="btn btn-primary" @onclick="AddCollection">Add</button>
+    </div>
+
+</EditForm>
+<div>
+<h3>Collection: </h3>
+    <ul>
+        @foreach (var item in myList)
+        {
+            <li>@item</li>
+        }
+    </ul>
+</div>
+
+
+<h3>Collections</h3>
+
+@code {
+    List<string> myList = new List<string>();
+    private List<CollectionModel> collections = new();
+    private CollectionModel collection = new();
+
+    private void AddCollection()
+    {
+        collections.Add(collection);
+        collection = new();
+    }
+}
+*@
